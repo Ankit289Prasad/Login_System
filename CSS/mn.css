@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+
+body{
+    background-color: aqua;
+}
+
+:root{
+    --font-ubuntu:'Ubuntu',monospace;
+    --color-order:#e5e5e5;
+}
+
+.font-ubuntu{
+    font: normal 500 16px var(--font-ubuntu);
+}
