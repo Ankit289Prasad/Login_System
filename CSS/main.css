@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+body{
+    overflow: hidden;
+   height: 100%;
+}
+:root{
+    --font-ubuntu:'Ubuntu',monospace;
+    --color-border:#e5e5e5;
+}
+
+.font-ubuntu{
+    font: normal 500 16px var(--font-ubuntu);
+}
+
+#register .upload-profile-image:hover{
+    filter: drop-shadow(1px 1px 22px #7584bb);
+}
+#upload-profile::-webkit-file-upload-button{
+    visibility: hidden;
+}
+#upload-profile::before{
+    content: '';
+    display: inline-block;
+    width: 170px;
+    height: 170px;
+    cursor: pointer;
+    border-radius: 50%;
+}#register .upload-profile-image .camera-icon{
+    position: absolute;
+    top: 45px;
+    width: 60px !important;
+    filter: invert(30%) !important;
+}
+#register .upload-profile-image:hover .camera-icon{
+    filter: invert(100%)!important;
+}
+#reg-form input[type='text'],#reg-form input[type='email'],#reg-form input[type='password']{
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #d3d3d3;
+  
+  box-shadow: none;
+  color: #111;
+}
+#reg-form input[type='text']:invalid,#reg-form input[type='email']:invalid,#reg-form input[type='password']:invalid{
+    outline: 0!important;
+}
+
+#reg-form input[type='email']:valid,#reg-form input[type='password']:valid,
+#reg-form input[type='text']:focus,#reg-form input[type='email']:focus,#reg-form input[type='password']:focus{
+    border-color:  #00dd22;
+}
