@@ -50,8 +50,8 @@
                         </div>
                         <div class="form-row " style="margin-top: 11px;">
                             <div class="col">
-                                <input type="password"required name="confirm_pwd" onkeyup="chkpwd();" id="confirm_pwd" class="form-control" placeholder="Confirm Password*">
-                                <small id="confirm_error"></small>
+                                <input type="password"required name="confirm_pwd" onkeyup='chkpwd();' id="confirm_pwd" class="form-control" placeholder="Confirm Password*">
+                                <small id="confirm_error" ></small>
                             </div>
                         </div>
                         <div class="form-check form-check-inline pt-3">
@@ -59,7 +59,7 @@
                             <label for="agreement" class="form-check-lable font-ubuntu text-black-50 my-2" style="font-size:85%;">I agree <a href="#">terms,conditions,and policy</a>(*)</label>
                         </div>
                         <div class="submit-btn text-center pt-2">
-                            <button type="submit" class="btn btn-warning rounded-pill text-dark px-5">Continue</button>
+                            <button type="submit" class="btn btn-warning rounded-pill text-dark px-5 enableOnInput" id="button1">Continue</button>
                         </div>
                     </form>
                 </div>
