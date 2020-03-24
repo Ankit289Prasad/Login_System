@@ -50,8 +50,8 @@
                         </div>
                         <div class="form-row " style="margin-top: 11px;">
                             <div class="col">
-                                <input type="password"required name="confirm_pwd" id="confirm_pwd" class="form-control" placeholder="Confirm Password*">
-                                <small id="confirm_error" class="text-danger"></small>
+                                <input type="password"required name="confirm_pwd" onkeyup="chkpwd();" id="confirm_pwd" class="form-control" placeholder="Confirm Password*">
+                                <small id="confirm_error"></small>
                             </div>
                         </div>
                         <div class="form-check form-check-inline pt-3">
