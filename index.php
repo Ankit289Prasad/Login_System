@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <form action="register.php" method="POST" enctype="multipart/form-data" id="reg-form">
+                    <form action="./php/register.php" method="POST" enctype="multipart/form-data" id="reg-form">
                         <div class="form-row">
                             <div class="col">
                                 <input type="text" name="firstName" id="firtsName" class="form-control" placeholder="First Name">
@@ -51,6 +51,7 @@
                         <div class="form-row " style="margin-top: 11px;">
                             <div class="col">
                                 <input type="password"required name="confirm_pwd" id="confirm_pwd" class="form-control" placeholder="Confirm Password*">
+                                <small id="confirm_error" class="text-danger"></small>
                             </div>
                         </div>
                         <div class="form-check form-check-inline pt-3">
