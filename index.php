@@ -1,14 +1,13 @@
 <?php 
     include('./header.php');
 ?>
-<style>#upload-profile::before{
-     content: '';
-     display: inline-block; 
-     width: 200px;  
-     height: 200px;
-     cursor: pointer;
-     border-radius: 50%;
+
+<?php
+    if($_SERVER['REQUEST_METHOD']=='POST'){
+        require('./php/register-process.php');
     }
+?>
+
 </style>
     <section id="register" style="background:url('./Assets/background.png') no-repeat;margin-top:-10px; padding: 3% 0; background-size: cover;">
         <div class="row m-0">
@@ -29,23 +28,23 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <form action="./php/register.php" method="POST" enctype="multipart/form-data" id="reg-form">
+                    <form action="index.php" method="POST" enctype="multipart/form-data" id="reg-form">
                         <div class="form-row">
                             <div class="col">
-                                <input type="text" required name="firstName" id="firtsName" class="form-control" placeholder="First Name">
+                                <input type="text" required value="<?php if(isset($_POST['firstName'])) echo $_POST['firstName'] ?>" name="firstName" id="firtsName" class="form-control" placeholder="First Name">
                             </div>
                             <div class="col">
-                                <input type="text" required name="lastName" id="lastName" class="form-control" placeholder="Last Name">
-                            </div>
-                        </div>
-                        <div class="form-row " style="margin-top: 11px;">
-                            <div class="col">
-                                <input type="email"required name="email" id="email" class="form-control" placeholder="Email*">
+                                <input type="text" required value="<?php if(isset($_POST['lastName'])) echo $_POST['lastName'] ?>"name="lastName" id="lastName" class="form-control" placeholder="Last Name">
                             </div>
                         </div>
                         <div class="form-row " style="margin-top: 11px;">
                             <div class="col">
-                                <input type="password"required name="password" id="password" class="form-control" placeholder="New Password*">
+                                <input type="email"required value="<?php if(isset($_POST['email'])) echo $_POST['email'] ?>"name="email" id="email" class="form-control" placeholder="Email*">
+                            </div>
+                        </div>
+                        <div class="form-row " style="margin-top: 11px;">
+                            <div class="col">
+                                <input type="password"required name="password" onkeyup='chkpwd();' id="password" class="form-control" placeholder="New Password*">
                             </div>
                         </div>
                         <div class="form-row " style="margin-top: 11px;">
