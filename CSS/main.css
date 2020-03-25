@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
 body{
-    overflow: hidden;
+    
    height: 100%;
 }
 :root{
     --font-ubuntu:'Ubuntu',monospace;
     --color-border:#e5e5e5;
+}
+::-webkit-scrollbar{
+    width: 0;
 }
 
 .font-ubuntu{
@@ -45,8 +48,7 @@ body{
 #reg-form input[type='text']:invalid,#reg-form input[type='email']:invalid,#reg-form input[type='password']:invalid{
     outline: 0!important;
 }
-
-#reg-form input[type='email']:valid,#reg-form input[type='password']:valid,
+#reg-form input[type='text']:valid,#reg-form input[type='email']:valid,#reg-form input[type='password']:valid,
 #reg-form input[type='text']:focus,#reg-form input[type='email']:focus,#reg-form input[type='password']:focus{
     border-color:  #00dd22;
 }

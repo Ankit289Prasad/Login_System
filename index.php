@@ -10,7 +10,7 @@
      border-radius: 50%;
     }
 </style>
-    <section id="register" style="background:url('./Assets/background.png') no-repeat;margin-top:-25px; padding: 3% 0; background-size: cover;">
+    <section id="register" style="background:url('./Assets/background.png') no-repeat;margin-top:-10px; padding: 3% 0; background-size: cover;">
         <div class="row m-0">
             <div class="col-lg-4 offset-lg-2">
                 <div class="text-center pb-5">
@@ -32,10 +32,10 @@
                     <form action="./php/register.php" method="POST" enctype="multipart/form-data" id="reg-form">
                         <div class="form-row">
                             <div class="col">
-                                <input type="text" name="firstName" id="firtsName" class="form-control" placeholder="First Name">
+                                <input type="text" required name="firstName" id="firtsName" class="form-control" placeholder="First Name">
                             </div>
                             <div class="col">
-                                <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Last Name">
+                                <input type="text" required name="lastName" id="lastName" class="form-control" placeholder="Last Name">
                             </div>
                         </div>
                         <div class="form-row " style="margin-top: 11px;">
