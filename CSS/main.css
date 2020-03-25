@@ -11,6 +11,31 @@ body{
     width: 0;
 }
 
+#upload-profile
+{
+position: absolute;
+top: 0;
+z-index: 10;
+width: 150px;
+margin-top: 0px;
+height: 150px;
+left: 12px;
+opacity: 0;
+}
+#upload-profile::-webkit-file-upload-button{
+    visibility: hidden;
+}
+
+#upload-profile::before{
+    content: '';
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+
 .font-ubuntu{
     font: normal 500 16px var(--font-ubuntu);
 }

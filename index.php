@@ -21,11 +21,11 @@
                 <div class="upload-profile-image d-flex justfy-content-center pb-0" style="left:-70px;position: relative;top:-30px;width: 10%;margin-left: auto;margin-right: auto;transition: filter .8s ease;">
                     <div class="text-center">
                         <div class="d-flex justify-content-center">
-                            <img class="camera-icon" src="Assets/camera-solid.svg" alt="Camera">
+                            <img class="camera-icon" src="Assets/camera-solid.svg">
                         </div>
-                        <img src="Assets/Profile/beard.png" style="width:150px; height:150px; "  class=" img rounded-circle mx-3" alt="profile">
+                        <img src="Assets/Profile/beard.png" style="width:150px; height:150px; "  class="img rounded-circle mx-3" alt="profile">
                         <small class="form-text text-black-50">Choose Image</small>
-                        <input type="file" class="form-control-file" name="profileUpload" id="upload-profilee" style="position: absolute;top: 10px;z-index: 10;width: 200px;height:150px;margin-top: 13px; visibility:hidden;">
+                        <input type="file" onchange="readURL(this);" accept="image/png,image/jpg,image/jpeg" class="form-control-file" name="profileUpload" id="upload-profile" >
                     </div>
                 </div>
                 <div class="d-flex justify-content-center">
@@ -58,7 +58,7 @@
                             <input type="checkbox" name="agreement" class="form-check-input" required>
                             <label for="agreement" class="form-check-lable font-ubuntu text-black-50 my-2" style="font-size:85%;">I agree <a href="#">terms,conditions,and policy</a>(*)</label>
                         </div>
-                        <div class="submit-btn text-center pt-2">
+                        <div class="submit-btn text-center pt-3">
                             <button type="submit" class="btn btn-warning rounded-pill text-dark px-5 enableOnInput" id="button1">Continue</button>
                         </div>
                     </form>
