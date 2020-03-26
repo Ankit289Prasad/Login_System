@@ -24,7 +24,7 @@
                         </div>
                         <img src="Assets/Profile/beard.png" style="width:150px; height:150px; "  class="img rounded-circle mx-3" alt="profile">
                         <small class="form-text text-black-50">Choose Image</small>
-                        <input type="file" onchange="readURL(this);" accept="image/png,image/jpg,image/jpeg" class="form-control-file" name="profileUpload" id="upload-profile" >
+                        <input type="file" form="reg-form" onchange="readURL(this);"name="profileUpload" accept="image/png,image/jpg,image/jpeg" class="form-control-file" id="upload-profile" >
                     </div>
                 </div>
                 <div class="d-flex justify-content-center">

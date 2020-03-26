@@ -1,16 +1,45 @@
 <?php
 
-define('DB_NAME','register_db');
-define('DB_USER','root');
-define('DB_PASSWORD','');
-define('DB_HOST','localhost');
+function Createdb(){
+    $DB_HOST="localhost";
+    $DB_USER="root";
+    $PASSWORD="";
+    $DB_NAME="register_db";
 
-try{
+    $con=mysqli_connect($DB_HOST,$DB_USER,$PASSWORD);
 
-    $con=new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
+    if(!$con){
+        die("Connection Failed: ".mysqli_connect_error());
+    }
+    $sql="CREATE DATABASE IF NOT EXISTS $DB_NAME
+    COLLATE utf8mb4_general_ci";
+    
+    if(mysqli_query($con,$sql))
+    {
+        $con=mysqli_connect($DB_HOST,$DB_USER,$PASSWORD,$DB_NAME);
 
-}catch(Exception $ex){
+        $sql="CREATE TABLE IF NOT EXISTS USER(
+                userID INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                firstName varchar(100),
+                lastName varchar(100),
+                email varchar(200) not null,
+                password varchar(200) not null,
+                profileImage varchar(255),
+                registerDate datetime
+                );";
 
+        if(mysqli_query($con,$sql)){
+            return $con;
+        }
+        else
+        {
+            echo "Cannot Create table...!".mysqli_error($con);
+        }
+    }
+    else{
+        echo "Error while creating database ".mysqli_error($con);
+    }
+    
 }
 
 ?>

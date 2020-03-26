@@ -29,13 +29,31 @@ if(empty($confirm_pwd)){
     $error[]="You forgot to enter your Confirm Password";
 }
 
-
-
-
-
+$files=$_FILES['profileUpload'];
+$profileImage=upload_profile('../Assets/Profile/',$files);
 
 if(empty($error)){
-    echo 'Validate';
+    $hashed_pass=password_hash($password,PASSWORD_DEFAULT);
+    require_once('mysqli_connect.php');
+
+    $query="INSERT INTO user(userID,firstName,lastName,email,password,profileImage,registerDate)";
+    $query.="VALUES('',?,?,?,?,?,NOW())";
+
+    $q=mysqli_stmt_init($con);
+
+    mysqli_stmt_prepare($q,$query);
+
+    mysqli_stmt_bind_param($q,'sssss',$firstName,$lastName,$email,$hashed_pass,$profileImage);
+
+    mysqli_stmt_execute($q);
+
+    if(mysqli_stmt_affected_rows($q)==1){
+        print "Record Successfully Inserted...!!!";
+    }
+    else{
+        print "Error While Registration";
+    }
+
 }
 else{
     echo 'Not Validate';
