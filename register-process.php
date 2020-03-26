@@ -1,6 +1,6 @@
 <?php
 
-require('helper.php');
+require('./helper.php');
 
 $error =array();
 
@@ -30,7 +30,7 @@ if(empty($confirm_pwd)){
 }
 
 $files=$_FILES['profileUpload'];
-$profileImage=upload_profile('../Assets/Profile/',$files);
+$profileImage=upload_profile('./Assets/Profile/',$files);
 
 if(empty($error)){
     $hashed_pass=password_hash($password,PASSWORD_DEFAULT);

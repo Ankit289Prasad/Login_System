@@ -1,5 +1,5 @@
 <?php
-require_once("./php/mysqli_connect.php");
+require_once("mysqli_connect.php");
 $con=Createdb();
 ?>
 

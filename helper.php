@@ -20,11 +20,10 @@ function validate_input_email($emailValue){
 
 function upload_profile($path,$file){
     $targetDir=$path;
-    $default="../Assets/Profile/beard.png"; 
+    $default="./Assets/Profile/beard.png"; 
     $filename=basename($file['name']);
     $targetFilePath=$targetDir.$filename;
     $fileType=pathinfo($targetFilePath,PATHINFO_EXTENSION);
-
     if(!empty($filename)){
         $allowType=array('jpg','png','jpeg');
         if(in_array($fileType,$allowType)){
