@@ -8,7 +8,6 @@
     width: 0;
 }
 .font-ubuntu{
-    color: rgba(0, 0, 0, 0.589);
     font: normal 500 16px var(--font-ubuntu);
 }
 #log-form input[type='email'],#log-form input[type='password']{
