@@ -48,7 +48,8 @@ if(empty($error)){
     mysqli_stmt_execute($q);
 
     if(mysqli_stmt_affected_rows($q)==1){
-        print "Record Successfully Inserted...!!!";
+        header('location:./login.php');
+        exit;
     }
     else{
         print "Error While Registration";

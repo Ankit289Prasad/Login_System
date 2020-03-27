@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
-body{
-    
-   ov
-}
+
 :root{
     --font-ubuntu:'Ubuntu',monospace;
     --color-border:#e5e5e5;
@@ -10,6 +7,7 @@ body{
 ::-webkit-scrollbar{
     width: 0;
 }
+
 
 #upload-profile
 {
@@ -77,3 +75,4 @@ opacity: 0;
 #reg-form input[type='text']:focus,#reg-form input[type='email']:focus,#reg-form input[type='password']:focus{
     border-color:  #00dd22;
 }
+

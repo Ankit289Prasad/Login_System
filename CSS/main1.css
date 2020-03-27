@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+
+:root{
+    --font-ubuntu:'Ubuntu',monospace;
+    --color-border:#e5e5e5;
+}
+::-webkit-scrollbar{
+    width: 0;
+}
+.font-ubuntu{
+    color: rgba(0, 0, 0, 0.589);
+    font: normal 500 16px var(--font-ubuntu);
+}
+#log-form input[type='email'],#log-form input[type='password']{
+    margin-left: -18%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #d3d3d3;
+    box-shadow: none;
+    color: #111;
+  }
+  #log-form input[type='email']:invalid,#log-form input[type='password']:invalid{
+      outline: 0!important;
+  }
+  #log-form input[type='email']:valid,#log-form input[type='password']:valid,
+  #log-form input[type='email']:focus,#log-form input[type='password']:focus{
+      border-color:  #00dd22;
+  }
+
+#login-form a:hover{
+    text-decoration: none;
+}

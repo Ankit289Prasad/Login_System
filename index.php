@@ -9,13 +9,13 @@
 ?>
 
 </style>
-    <section id="register" style="background:url('./Assets/background.png') no-repeat;margin-top:-10px; padding: 3% 0; background-size: cover;">
+    <section id="register" style="background:url('./Assets/background2.png') no-repeat;margin-top:-10px; padding: 3% 0; background-size: cover;">
         <div class="row m-0">
             <div class="col-lg-4 offset-lg-2">
                 <div class="text-center pb-5">
                 <h1 class="login-title text-dark">Register</h1>
                 <p class="p-1 m-0 font-ubuntu text-black-50" style="font-size: 80%">Register and enjoy additional features</p>
-                <span class="font-ubuntu text-black-50"style="font-size: 90%">I already have <a href="./php/login.php">Login</a></span>
+                <span class="font-ubuntu text-black-50"style="font-size: 90%">I already have <a href="./login.php" style="text-decoration: none">Login</a></span>
                 </div>
                 <div class="upload-profile-image d-flex justfy-content-center pb-0" style="left:-70px;position: relative;top:-30px;width: 10%;margin-left: auto;margin-right: auto;transition: filter .8s ease;">
                     <div class="text-center">
