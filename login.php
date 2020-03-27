@@ -1,3 +1,8 @@
+<?php
+require_once("mysqli_connect.php");
+$con=Createdb();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,10 +15,17 @@
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/main1.css">
+    
 </head>
 <body>
 
-</style>
+<?php
+
+if($_SERVER['REQUEST_METHOD']=='POST'){
+    require('login-process.php');
+}
+
+?>
     <section id="login-form" style="background:url('./Assets/background1.png') no-repeat;margin-top:-10px; padding: 6.5% 0; background-size: cover;">
         <div class="row m-0">
             <div class="col-lg-4 offset-lg-2">
