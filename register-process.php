@@ -48,6 +48,13 @@ if(empty($error)){
     mysqli_stmt_execute($q);
 
     if(mysqli_stmt_affected_rows($q)==1){
+
+        session_start();
+
+        $_SESSION['userID']=mysqli_insert_id($con);
+        
+
+
         header('location:./login.php');
         exit;
     }

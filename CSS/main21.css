@@ -21,11 +21,15 @@
   #log-form input[type='email']:invalid,#log-form input[type='password']:invalid{
       outline: 0!important;
   }
-  #log-form input[type='email']:valid,#log-form input[type='password']:valid,
-  #log-form input[type='email']:focus,#log-form input[type='password']:focus{
-      border-color:  #00dd22;
+  #log-form input[type='email']:valid,#log-form input[type='password']:valid{
+      border-color:  #00dd22;;
   }
-
+  #log-form input[type='email']:focus,#log-form input[type='password']:focus{
+    border-color:  slateblue;
+}
+#login-form .upload-profile-image:hover{
+    filter: drop-shadow(1px 1px 22px #7584bb);
+}
 #login-form a:hover{
     text-decoration: none;
 }

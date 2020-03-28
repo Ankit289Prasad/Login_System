@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once("mysqli_connect.php");
 $con=Createdb();
 ?>
@@ -14,18 +15,37 @@ $con=Createdb();
     <title>Memoria Photo Gallery Login</title>
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="CSS/main1.css">
+    <link rel="stylesheet" href="CSS/main21.css">
     
 </head>
 <body>
 
 <?php
+    $user=array();
+    if(isset($_SESSION['userID'])){
+        $user=get_user_info($con,$_SESSION['userID']);
+    }
+    function get_user_info($con,$userID){
+        $query="SELECT firstName,lastName,email,profileImage FROM user WHERE userID =?";
+        $q=mysqli_stmt_init($con);
+    
+        mysqli_stmt_prepare($q,$query);
+    
+        mysqli_stmt_bind_param($q,'i',$userID);
+    
+        mysqli_stmt_execute($q);
+    
+        $result=mysqli_stmt_get_result($q);
+    
+        $row=mysqli_fetch_array($result);
+        return empty($row)?false:$row;
+        
+    }
+    if($_SERVER['REQUEST_METHOD']=='POST'){
+        require('login-process.php');
+    }
 
-if($_SERVER['REQUEST_METHOD']=='POST'){
-    require('login-process.php');
-}
-
-?>
+    ?>
     <section id="login-form" style="background:url('./Assets/background1.png') no-repeat;margin-top:-10px; padding: 6.5% 0; background-size: cover;">
         <div class="row m-0">
             <div class="col-lg-4 offset-lg-2">
@@ -36,7 +56,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
                 </div>
                 <div class="upload-profile-image d-flex justfy-content-center pb-0" style="left:-70px;position: relative;top:-30px;width: 10%;margin-left: auto;margin-right: auto;transition: filter .8s ease;">
                     <div class="text-center">
-                    <img src="Assets/Profile/beard.png" style="width:150px; height:150px; "  class="img rounded-circle mx-3" alt="default-profile">
+                    <img src="<?php echo isset($user['profileImage'])? $user['profileImage']:'Assets/Profile/beard.png'; ?>" style="width:150px; height:150px; "  class="img rounded-circle mx-3" alt="default-profile">
                    </div>
                 </div>
                 <div class="d-flex justify-content-center">
