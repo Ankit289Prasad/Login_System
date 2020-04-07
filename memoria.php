@@ -42,7 +42,7 @@ function get_user_info($con,$userID){
     
     }
     ?>
-<body>
+<div class="ml-8">
     <section id="main-site">
         <div class="container py-5">
             <div class="row">
@@ -72,7 +72,6 @@ function get_user_info($con,$userID){
             </div>
         </div>
     </section>
-
 <?php
     include('./footer.php');
 ?>
